@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2015 at 04:51 AM
+-- Generation Time: Jul 14, 2015 at 12:09 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -31,7 +31,15 @@ CREATE TABLE IF NOT EXISTS `supplies_store` (
   `supp_name` text NOT NULL,
   `supp_amount` int(11) NOT NULL,
   `supp_date` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `supplies_store`
+--
+
+INSERT INTO `supplies_store` (`supp_id`, `supp_name`, `supp_amount`, `supp_date`) VALUES
+(1, 'ปากกา', 20, '14/07/2015'),
+(2, 'ดินสอ', 50, '14/07/2015');
 
 --
 -- Indexes for dumped tables
@@ -51,7 +59,7 @@ ALTER TABLE `supplies_store`
 -- AUTO_INCREMENT for table `supplies_store`
 --
 ALTER TABLE `supplies_store`
-  MODIFY `supp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `supp_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
