@@ -30,4 +30,8 @@ class Sup_con extends CI_Controller {
 		// $show_supplies  = $this->sup_mod->get_supplies_store();
 
 	}
+
+	public function withdraw_supplies(){
+		$this->load->view('withdraw_supplies');
+	}
 }

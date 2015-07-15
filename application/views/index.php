@@ -28,7 +28,7 @@
 								<td class="text-center col-md-1"><?php echo $row_supplies->supp_id;?></td>
 								<td class="col-md-6"><?php echo $row_supplies->supp_name;?></td>
 								<td class="text-center col-md-2"><?php echo $row_supplies->supp_amount;?></td>
-								<td class="text-center col-md-2"><?php echo $row_supplies->supp_date;?></td>
+								<td class="text-center col-md-3"><?php echo $row_supplies->supp_date;?></td>
 							</tr>
 							<?php
 						}
