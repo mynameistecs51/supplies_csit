@@ -55,10 +55,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <?php echo anchor('sup_con/withdraw_supplies','หน้าหลัก');?>
+                        <?php echo anchor('sup_con/withdraw_supplies','รายการเบิก-จ่าย');?>
                     </li>
                     <li>
-                        <?php echo anchor('index','รายการ stock');?>
+                        <?php echo anchor('sup_con/supplies_store','รายการ stock');?>
                     </li>
                     <li>
                         <?php echo anchor('add_supplies','เพิ่มรายการ');?>

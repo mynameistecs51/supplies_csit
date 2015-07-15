@@ -10,11 +10,7 @@ class Sup_con extends CI_Controller {
 	}
 	public function index()
 	{
-		$data = array(
-			'show_supplies'  => $this->sup_mod->get_supplies_store(),
-			);
-
-		$this->load->view('index',$data);
+		$this->load->view('withdraw_supplies');
 	}
 
 	public function add_supplies(){
@@ -33,5 +29,13 @@ class Sup_con extends CI_Controller {
 
 	public function withdraw_supplies(){
 		$this->load->view('withdraw_supplies');
+	}
+
+	public function supplies_store(){
+		$data = array(
+			'show_supplies'  => $this->sup_mod->get_supplies_store(),
+			);
+
+		$this->load->view('supplies_store',$data);
 	}
 }

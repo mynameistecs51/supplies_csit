@@ -28,7 +28,6 @@
 			<div class="form-group">
 				<label for="supplies_date" class="col-sm-3 control-label" >วันที่</label>
 				<div class="col-sm-7">
-					<!-- <input type="text" class="form-control" name="supplies_date" id="supplies_date" disabled /> -->
 					<input type="datetime"  class="form-control"   value="<?php echo date('d/m/Y H:i:s'); ?>" data-format="dd/MM/yyyy hh:mm:ss" name="supplies_date" id="supplies_date" />
 				</div>
 			</div>
