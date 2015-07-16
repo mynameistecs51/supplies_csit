@@ -22,17 +22,14 @@
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount" />
 				</div>
 
-				<div class="col-sm-1">
-					<i class="fa fa-plus-square fa-2x" id="clone-list"></i>   <!-- / . add supplies name list -->
+				<div class="col-sm-1">		<!-- / . add supplies name list -->
+					<i class="fa fa-plus-square fa-2x" id="clone-list"></i>
 				</div>
 			</div>
 
-
-			<!-- <div class="form-group"> -->
 			<div id="add">
 				<!-- / .show copy id withdraw -->
 			</div>
-			<!-- </div> -->
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
@@ -64,10 +61,16 @@
 </div>
 
 <?php $this->load->view('footer')?>		<!-- /  =====================. end footer. ===================\ -->
+
 <script type="text/javascript">
 	$(function(){
-		$("#clone-list").click(function(){
-			$('#withdraw').clone().appendTo("#add");
-		});
-	});
+		var counts = [0];
+		$("#clone-list").click(function(e){
+			counts[0]++;
+
+			$('#withdraw').clone().appendTo('#add');
+			$('#supplies_name').attr('name','supplies_name-'+counts[0]);
+			$('#supplies_amount').attr('name','supplies_amount-'+counts[0]);
+		});  // -------------- . end function click .-----------------
+	});  // . end function() . ------------------
 </script>
