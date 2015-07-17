@@ -38,4 +38,9 @@ class Sup_con extends CI_Controller {
 
 		$this->load->view('supplies_store',$data);
 	}
+
+	public function add_withdraw(){
+		echo "<pre>";
+		print_r($data);
+	}
 }
