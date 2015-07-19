@@ -41,6 +41,13 @@ class Sup_con extends CI_Controller {
 
 	public function add_withdraw(){
 
-		$name = array();
+		$name = $this->input->post('namelist[]');
+		$number = $this->input->post('number[]');
+		 //echo count($name);
+		for($i=1; $i <= count($name) ; $i++){
+			echo $name[$i]."=".$number[$i]."<br/>";
+			//echo $name[$i]."=".$number[$i]."<br/>";
+
+		}
 	}
 }

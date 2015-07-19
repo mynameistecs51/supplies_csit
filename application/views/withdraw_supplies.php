@@ -30,7 +30,7 @@
 				/ .show copy id withdraw (add text box copy)
 			</div> -->
 
-			<div class="form-group">
+			<div class="form-group well">
 				<label class="control-label col-sm-1" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
 				<div class="col-sm-3">
 					<input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" />
@@ -87,8 +87,7 @@
 			var no = Number($(this).attr('data-count')) + 1;
 			$(this).attr('data-count',no);
 			getWithDraw(no);
-
+			console.log(no);
 		});  // -------------- . end function click .-----------------
-		$('#withdraw').appendTo('#withdraw');
 	});  // . end function() . ------------------
 </script>
