@@ -10,9 +10,9 @@
 		</div>
 		<div class="panel-body">
 			<?php //echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form"'); ?>
-			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw"'); ?>
-			<div class="form-group" id="withdraw">
-				<label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
+			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw" method="post" '); ?>
+			<div id="withdraw">
+				<!-- <label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name" name="supplies_name-0" value="" />
 				</div>
@@ -20,20 +20,18 @@
 				<label class="control-label col-sm-1" for="supplies_amount">จำนวน:</label>
 				<div class="col-sm-2">
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
-				</div>
-
-				<div class="col-sm-1">		<!-- / . add supplies name list -->
-					<i class="fa fa-plus-square fa-2x" id="clone-list"></i>
-				</div>
-
+				</div> -->
+			</div>
+			<div class="col-sm-1">		<!-- / . add supplies name list -->
+				<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0"></i>
 			</div>
 
-			<div id="add">
-				<!-- / .show copy id withdraw (add text box copy) -->
-			</div>
+			<!-- <div id="add">
+				/ .show copy id withdraw (add text box copy)
+			</div> -->
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
+				<label class="control-label col-sm-1" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
 				<div class="col-sm-3">
 					<input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" />
 				</div>
@@ -45,7 +43,7 @@
 
 				<lable class="control-label col-sm-1"  for="supplies_detail">หมายเหตุ</lable>
 				<div class="col-sm-3">
-					<textarea id="supplies_detail" class="form-control" rows="2" ></textarea>
+					<textarea id="supplies_detail"  name="supplie_detail" class="form-control" rows="2" ></textarea>
 				</div>
 			</div>
 
@@ -64,36 +62,33 @@
 <?php $this->load->view('footer')?>		<!-- /  =====================. end footer. ===================\ -->
 
 <script type="text/javascript">
+	function  getWithDraw(no){
+		var f = ['form-control','control-label'];
+		var n = ['supplies_name','supplies_amount'];
+		$('#withdraw').append($('<div>', { 'id':'wd-' + no , 'class' : 'form-group row well'})
+			// flied add supplies list
+			.append($('<label>',{'class': f[1] + ' col-sm-2', 'text' :  'ชื่อ/รายการ :' }))
+			.append($('<div>', { 'class' : 'col-sm-5'})
+				.append($('<input>' , {'type' : 'text', 'class' : f[0] , 'id' : n[0] + '-' + no , 'name' : 'namelist['+no+']'}))
+				)
+
+			//flied add supplie amount
+			.append($('<label>',{'class': f[1] + ' col-sm-1', 'text' :  'จำนวน :' }))
+			.append($('<div>', { 'class' : 'col-sm-2'})
+				.append($('<input>' , {'type' : 'text', 'class' : f[0] , 'id' : n[1] + '-' + no , 'name' : 'number['+no+']'}))
+				)
+			);
+		//alert('success');
+	}
+
 	$(function(){
-		var counts = [0];
-		//var data = '';
 		$("#clone-list").click(function(){
-			counts[0]++;
 
-			$('#withdraw').clone().appendTo('#add');
-			$('#supplies_name').attr('name','supplies_name-'+counts[0]).val('');
-			$('#supplies_amount').attr('name','supplies_amount-'+counts[0]).val('');
+			var no = Number($(this).attr('data-count')) + 1;
+			$(this).attr('data-count',no);
+			getWithDraw(no);
 
-			//console.log($('#withdraw input[type=text]').length+"\n"+$(' input[type="text"]').attr('name'));.
-			$('#add_withdraw').submit(function(){
-				$('#withdraw input[type=text]').each(function() {
-					//console.log("name = "+$(this).attr('name')+"\n"+"value = "+$(this).val()+"\n");
-					data = $(this).serialize();
-					$.ajax({
-						url: '<?php echo base_url()."sup_con/add_withdraw/";?>',
-						type:'POST',
-						//dataType: data,
-						//data: {param1: 'value1'},
-						data: {data};
-					});
-				});
-			});
-			//console.log($('#withdraw input[type=text]').length);
 		});  // -------------- . end function click .-----------------
-		// $('#add_withdraw').submit(function() {
-		// 	$('#withdraw input[type=text]').each(function(){
-		// 		alert(data);
-		// 	});
-		// });
+		$('#withdraw').appendTo('#withdraw');
 	});  // . end function() . ------------------
 </script>
