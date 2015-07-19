@@ -66,6 +66,7 @@
 <script type="text/javascript">
 	$(function(){
 		var counts = [0];
+		//var data = '';
 		$("#clone-list").click(function(){
 			counts[0]++;
 
@@ -74,19 +75,25 @@
 			$('#supplies_amount').attr('name','supplies_amount-'+counts[0]).val('');
 
 			//console.log($('#withdraw input[type=text]').length+"\n"+$(' input[type="text"]').attr('name'));.
-			$('#withdraw input[type=text]').each(function() {
-				//console.log("name = "+$(this).attr('name')+"\n"+"value = "+$(this).val()+"\n");
-
+			$('#add_withdraw').submit(function(){
+				$('#withdraw input[type=text]').each(function() {
+					//console.log("name = "+$(this).attr('name')+"\n"+"value = "+$(this).val()+"\n");
+					data = $(this).serialize();
+					$.ajax({
+						url: '<?php echo base_url()."sup_con/add_withdraw/";?>',
+						type:'POST',
+						//dataType: data,
+						//data: {param1: 'value1'},
+						data: {data};
+					});
+				});
 			});
 			//console.log($('#withdraw input[type=text]').length);
 		});  // -------------- . end function click .-----------------
-		$('#add_withdraw').submit(function() {
-			$('#withdraw input[type=text]').each(function() {
-				//alert("name = "+$(this).attr('name')+"\n"+"value = "+$(this).val()+"\n");
-				data : $('#add_withdraw').serialize(),
-				post: "POST",
-				url: <?php echo base_url()."add_withdraw";?>
-			});
-		});
+		// $('#add_withdraw').submit(function() {
+		// 	$('#withdraw input[type=text]').each(function(){
+		// 		alert(data);
+		// 	});
+		// });
 	});  // . end function() . ------------------
 </script>

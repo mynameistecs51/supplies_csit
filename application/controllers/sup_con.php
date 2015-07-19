@@ -41,6 +41,6 @@ class Sup_con extends CI_Controller {
 
 	public function add_withdraw(){
 		echo "<pre>";
-		print_r($data);
+		print_r( $this->input->post($data));
 	}
 }
