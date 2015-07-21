@@ -35,9 +35,9 @@
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
 				</div> -->
 			</div>
-			<div class="form-group row " id="clone-list"><!--  / . add supplies name list  -->
-				<label class="control-label pull-right" for="clone-list" name="clone-list">เพิ่มรายการ-->
-					<i class="fa fa-plus-square fa-2x clone-list"  name="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
+			<div class="form-group row " id="clone-list" data-count="0"><!--  / . add supplies name list  -->
+				<label class="control-label pull-right" for="clone-list">เพิ่มรายการ-->
+					<i class="fa fa-plus-square fa-2x clone-list"  name="clone-list"  title="เพิ่มรายกาาร"></i>
 				</label>
 			</div>
 
