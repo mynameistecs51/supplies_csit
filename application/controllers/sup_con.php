@@ -41,13 +41,25 @@ class Sup_con extends CI_Controller {
 
 	public function add_withdraw(){
 
-		$name = $this->input->post('namelist[]');
-		$number = $this->input->post('number[]');
+		$name = $this->input->post('namelist[]');	//รายการที่เบิก
+		$number = $this->input->post('number[]');	//จำนวน
+		$swd_name = $this->input->post('supplies_withdraw_name');	//ผู้เบิก
+		$swd_date = $this->input->post('supplies_date'); //วันที่เบิก
+		$swd_detail = $this->input->post('supplies_detail'); //หมายเหตุที่เบิก
 		 //echo count($name);
-		for($i=1; $i <= count($name) ; $i++){
-			echo $name[$i]."=".$number[$i]."<br/>";
-			//echo $name[$i]."=".$number[$i]."<br/>";
-
+		for($i=0; $i < count($name) ; $i++){
+			$withdraw_insert = array(
+				'list_id' => '',
+				'list_name' => $name[$i],
+				'list_amount' => $number[$i],
+				'user_id' => $swd_name,
+				'list_date' => $swd_date,
+				'list_detail' => $swd_detail,
+				);
+			echo "<pre>";
+			print_r($withdraw_insert);
+			//$this->db->insert('list_withdraw',$withdraw_insert);
 		}
 	}
 }
+?>

@@ -11,7 +11,24 @@
 		<div class="panel-body">
 			<?php //echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form"'); ?>
 			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw" method="post" '); ?>
-			<div id="withdraw">
+
+			<div id="wd-0" class="form-group row well">
+				<label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="supplies_name-0" name="namelist[0]"  />
+				</div>
+
+				<label class="control-label col-sm-1" for="supplies_amount">จำนวน:</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" id="supplies_amount-0" name="number[0]" />
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1">		<!--  / . add supplies name list  -->
+			<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
+		</div>
+		
+		<div id="withdraw">
 				<!-- <label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name" name="supplies_name-0" value="" />
@@ -21,13 +38,17 @@
 				<div class="col-sm-2">
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
 				</div> -->
+				
 			</div>
-			<div class="col-sm-1">		<!-- / . add supplies name list -->
+			<div class="col-sm-1">		<!--  / . add supplies name list  -->
+				<!-- <i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i> -->
+			</div>
+		<!--	<div class="col-sm-1">		 / . add supplies name list 
 				<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0"></i>
 			</div>
-
+		-->
 			<!-- <div id="add">
-				/ .show copy id withdraw (add text box copy)
+				// .show copy id withdraw (add text box copy)
 			</div> -->
 
 			<div class="form-group well">
@@ -43,7 +64,7 @@
 
 				<lable class="control-label col-sm-1"  for="supplies_detail">หมายเหตุ</lable>
 				<div class="col-sm-3">
-					<textarea id="supplies_detail"  name="supplie_detail" class="form-control" rows="2" ></textarea>
+					<textarea id="supplies_detail"  name="supplies_detail" class="form-control" rows="2" ></textarea>
 				</div>
 			</div>
 
@@ -82,12 +103,12 @@
 	}
 
 	$(function(){
-		$("#clone-list").click(function(){
 
+		$("#clone-list").click(function(){
 			var no = Number($(this).attr('data-count')) + 1;
 			$(this).attr('data-count',no);
 			getWithDraw(no);
-			console.log(no);
+			//console.log(no);
 		});  // -------------- . end function click .-----------------
 	});  // . end function() . ------------------
 </script>
