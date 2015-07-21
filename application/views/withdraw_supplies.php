@@ -12,7 +12,7 @@
 			<?php //echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form"'); ?>
 			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw" method="post" '); ?>
 
-			<div id="wd-0" class="form-group row well">
+			<div id="wd-0" class="form-group row well" >
 				<label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name-0" name="namelist[0]"  />
@@ -23,12 +23,8 @@
 					<input type="text" class="form-control" id="supplies_amount-0" name="number[0]" />
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-1">		<!--  / . add supplies name list  -->
-			<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
-		</div>
-		
-		<div id="withdraw">
+
+			<div id="withdraw">
 				<!-- <label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name" name="supplies_name-0" value="" />
@@ -38,15 +34,12 @@
 				<div class="col-sm-2">
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
 				</div> -->
-				
 			</div>
-			<div class="col-sm-1">		<!--  / . add supplies name list  -->
-				<!-- <i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i> -->
+
+			<div class=" form-group ">		<!--  / . add supplies name list  -->
+				<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
 			</div>
-		<!--	<div class="col-sm-1">		 / . add supplies name list 
-				<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0"></i>
-			</div>
-		-->
+
 			<!-- <div id="add">
 				// .show copy id withdraw (add text box copy)
 			</div> -->
@@ -89,7 +82,7 @@
 		$('#withdraw').append($('<div>', { 'id':'wd-' + no , 'class' : 'form-group row well'})
 			// flied add supplies list
 			.append($('<label>',{'class': f[1] + ' col-sm-2', 'text' :  'ชื่อ/รายการ :' }))
-			.append($('<div>', { 'class' : 'col-sm-5'})
+			.append($('<div>', { 'class' : 'col-sm-6'})
 				.append($('<input>' , {'type' : 'text', 'class' : f[0] , 'id' : n[0] + '-' + no , 'name' : 'namelist['+no+']'}))
 				)
 
@@ -103,12 +96,12 @@
 	}
 
 	$(function(){
-
-		$("#clone-list").click(function(){
+		$(".clone-list").click(function(){
 			var no = Number($(this).attr('data-count')) + 1;
 			$(this).attr('data-count',no);
 			getWithDraw(no);
 			//console.log(no);
 		});  // -------------- . end function click .-----------------
+		//getWithDraw(no);
 	});  // . end function() . ------------------
 </script>
