@@ -36,8 +36,8 @@
 				</div> -->
 			</div>
 
-			<div class=" form-group ">		<!--  / . add supplies name list  -->
-				<i class="fa fa-plus-square fa-2x clone-list" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
+			<div class=" col-sm-3 pull-right">		<!--  / . add supplies name list  -->
+				เพิ่มรายการ--->  <i class="fa fa-plus-square fa-2x clone-list pull-right" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
 			</div>
 
 			<!-- <div id="add">
