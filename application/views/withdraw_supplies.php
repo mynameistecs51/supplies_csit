@@ -35,9 +35,10 @@
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
 				</div> -->
 			</div>
-
-			<div class=" col-sm-3 pull-right">		<!--  / . add supplies name list  -->
-				เพิ่มรายการ--->  <i class="fa fa-plus-square fa-2x clone-list pull-right" id="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
+			<div class="form-group row " id="clone-list"><!--  / . add supplies name list  -->
+				<label class="control-label pull-right" for="clone-list" name="clone-list">เพิ่มรายการ-->
+					<i class="fa fa-plus-square fa-2x clone-list"  name="clone-list" data-count="0" title="เพิ่มรายกาาร"></i>
+				</label>
 			</div>
 
 			<!-- <div id="add">
@@ -77,26 +78,26 @@
 
 <script type="text/javascript">
 	function  getWithDraw(no){
-		var f = ['form-control','control-label'];
+		var c = ['form-control','control-label'];
 		var n = ['supplies_name','supplies_amount'];
 		$('#withdraw').append($('<div>', { 'id':'wd-' + no , 'class' : 'form-group row well'})
 			// flied add supplies list
-			.append($('<label>',{'class': f[1] + ' col-sm-2', 'text' :  'ชื่อ/รายการ :' }))
+			.append($('<label>',{'class': c[1] + ' col-sm-2', 'text' :  'ชื่อ/รายการ :' }))
 			.append($('<div>', { 'class' : 'col-sm-6'})
-				.append($('<input>' , {'type' : 'text', 'class' : f[0] , 'id' : n[0] + '-' + no , 'name' : 'namelist['+no+']'}))
+				.append($('<input>' , {'type' : 'text', 'class' : c[0] , 'id' : n[0] + '-' + no , 'name' : 'namelist['+no+']'}))
 				)
 
 			//flied add supplie amount
-			.append($('<label>',{'class': f[1] + ' col-sm-1', 'text' :  'จำนวน :' }))
+			.append($('<label>',{'class': c[1] + ' col-sm-1', 'text' :  'จำนวน :' }))
 			.append($('<div>', { 'class' : 'col-sm-2'})
-				.append($('<input>' , {'type' : 'text', 'class' : f[0] , 'id' : n[1] + '-' + no , 'name' : 'number['+no+']'}))
+				.append($('<input>' , {'type' : 'text', 'class' : c[0] , 'id' : n[1] + '-' + no , 'name' : 'number['+no+']'}))
 				)
 			);
 		//alert('success');
 	}
 
 	$(function(){
-		$(".clone-list").click(function(){
+		$("#clone-list").click(function(){
 			var no = Number($(this).attr('data-count')) + 1;
 			$(this).attr('data-count',no);
 			getWithDraw(no);
