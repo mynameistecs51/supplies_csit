@@ -60,10 +60,11 @@ class Sup_con extends CI_Controller {
 				'list_date' => $swd_date,
 				'list_detail' => $swd_detail,
 				);
-			echo "<pre>";
-			print_r($withdraw_insert);
-			//$this->db->insert('list_withdraw',$withdraw_insert);
+			// echo "<pre>";
+			// print_r($withdraw_insert);
+			$this->db->insert('list_withdraw',$withdraw_insert);
 		}
+		redirect('sup_con');
 	}
 
 }
