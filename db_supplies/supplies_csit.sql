@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2015 at 09:23 AM
+-- Generation Time: Jul 23, 2015 at 10:35 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -33,7 +33,15 @@ CREATE TABLE IF NOT EXISTS `list_withdraw` (
   `user_id` int(11) NOT NULL,
   `list_date` text NOT NULL,
   `list_detail` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `list_withdraw`
+--
+
+INSERT INTO `list_withdraw` (`list_id`, `list_name`, `list_amount`, `user_id`, `list_date`, `list_detail`) VALUES
+(1, '1', 1, 1000, '21/07/2015 10:48:45', '0000'),
+(2, '2', 2, 1000, '21/07/2015 10:48:45', '0000');
 
 -- --------------------------------------------------------
 
@@ -66,7 +74,34 @@ INSERT INTO `supplies_store` (`supp_id`, `supp_name`, `supp_amount`, `supp_date`
 CREATE TABLE IF NOT EXISTS `user_supplies` (
   `user_id` int(11) NOT NULL,
   `user_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_supplies`
+--
+
+INSERT INTO `user_supplies` (`user_id`, `user_name`) VALUES
+(1, 'สุทธิกานต์ บ่จักรพันธ์'),
+(2, 'นิพล สังสุทธิ'),
+(3, 'ไพศาล ดาแร่'),
+(4, 'อารีรัตน์ วุฒิเสน'),
+(5, 'นิพล สังสุทธิ'),
+(6, 'วันทนี รัฐสมุทร'),
+(7, 'ปิยวัจน์ ค้าสบาย'),
+(8, 'ปัจจัย พวงสุวรรณ'),
+(9, 'ปณวรรต คงธนกุลบวร'),
+(10, 'ภาณุพันธุ์ ชื่นบุญ'),
+(11, 'ตรีรัตน์ เสริมทรัพย์'),
+(12, 'คุณาวุฒิ บุญกว้าง'),
+(13, 'คณิศร จี้กระโทก'),
+(14, 'ขวัญชัย สุขแสน'),
+(15, 'กริช สมกันทา'),
+(16, 'ปิยสุดา ตัณเลิศ'),
+(17, 'เรวดี พิพัฒน์สูงเนิน'),
+(18, 'พิศณุ ชัยจิตวณิกุล'),
+(19, 'พนารัตน์ ศรีเชษฐา'),
+(20, 'มานะ โสภา'),
+(21, 'ณรรฐวรรณ์ พูลสน');
 
 --
 -- Indexes for dumped tables
@@ -98,7 +133,7 @@ ALTER TABLE `user_supplies`
 -- AUTO_INCREMENT for table `list_withdraw`
 --
 ALTER TABLE `list_withdraw`
-  MODIFY `list_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `list_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `supplies_store`
 --
@@ -108,7 +143,7 @@ ALTER TABLE `supplies_store`
 -- AUTO_INCREMENT for table `user_supplies`
 --
 ALTER TABLE `user_supplies`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
