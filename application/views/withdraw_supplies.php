@@ -12,7 +12,7 @@
 			<?php //echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form"'); ?>
 			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw" method="post" '); ?>
 
-			<div id="wd-0" class="form-group row well" >
+			<div id="wd-0" class="form-group row well col-md-12 " >
 				<label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name-0" name="namelist[0]"  />
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 
-			<div id="withdraw">
+			<div id="withdraw" >
 				<!-- <label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="supplies_name" name="supplies_name-0" value="" />
@@ -35,8 +35,8 @@
 					<input type="text" class="form-control" id="supplies_amount" name="supplies_amount-0" />
 				</div> -->
 			</div>
-			<div class="form-group row " id="clone-list" data-count="0"><!--  / . add supplies name list  -->
-				<label class="control-label pull-right" for="clone-list">เพิ่มรายการ-->
+			<div class="form-group row  pull-right " id="clone-list" data-count="0"><!--  / . add supplies name list  -->
+				<label class="control-label" for="clone-list">
 					<i class="fa fa-plus-square fa-2x clone-list"  name="clone-list"  title="เพิ่มรายกาาร"></i>
 				</label>
 			</div>
@@ -45,10 +45,18 @@
 				// .show copy id withdraw (add text box copy)
 			</div> -->
 
-			<div class="form-group well">
+			<div class="form-group well col-sm-12">
 				<label class="control-label col-sm-1" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
 				<div class="col-sm-3">
-					<input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" />
+					<!-- <input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" /> -->
+					<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true" title="----เลือก----">
+						<?php 
+						foreach ($show_user as $user_row) {
+							echo '<option value='.$user_row->user_id.'>อ'.$user_row->user_name.'</option>';
+						}
+						?>
+					</select>
+
 				</div>
 
 				<label class="control-label col-sm-1"  for="supplies_date" >วันที่</label>
@@ -62,7 +70,7 @@
 				</div>
 			</div>
 
-			<div class="form-group text-center">
+			<div class="form-group text-center col-md-12">
 				<!-- <div class="col-sm-offset-2 col-sm-10"> -->
 				<button type="reset" class="btn btn-warning">ยกเลิก </button>
 				<button type="submit" class="btn btn-success" id="submit">บันทึก  </button>
@@ -80,7 +88,7 @@
 	function  getWithDraw(no){
 		var c = ['form-control','control-label'];
 		var n = ['supplies_name','supplies_amount'];
-		$('#withdraw').append($('<div>', { 'id':'wd-' + no , 'class' : 'form-group row well'})
+		$('#withdraw').append($('<div>', { 'id':'wd-' + no , 'class' : 'form-group row well col-md-12'})
 			// flied add supplies list
 			.append($('<label>',{'class': c[1] + ' col-sm-2', 'text' :  'ชื่อ/รายการ :' }))
 			.append($('<div>', { 'class' : 'col-sm-6'})

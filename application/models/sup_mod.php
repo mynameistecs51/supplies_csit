@@ -18,5 +18,10 @@
 			$show_supplies = $this->db->query('SELECT * FROM supplies_store')->result();
 			return $show_supplies;
 		}
+
+		public function get_user(){
+			$show_user = $this->db->get('user_supplies');
+			return $show_user->result();
+		}
 	}
 ?>

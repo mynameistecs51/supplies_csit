@@ -23,6 +23,9 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 
+	<!-- Bootstrap Selectpicker -->
+	<script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-select/bootstrap-select.js"></script>
+
 	<script>
 		$(document).ready(function() {
 			$('#example').dataTable();

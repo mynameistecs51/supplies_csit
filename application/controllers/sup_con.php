@@ -8,9 +8,13 @@ class Sup_con extends CI_Controller {
 		parent::__construct();
 		$this->load->model('sup_mod','',TRUE);
 	}
-	public function index()
-	{
-		$this->load->view('withdraw_supplies');
+	public function index(){
+
+	$data = array(
+		'show_user' => $this->sup_mod->get_user(),
+		);
+
+		$this->load->view('withdraw_supplies', $data);
 	}
 
 	public function add_supplies(){
@@ -61,5 +65,6 @@ class Sup_con extends CI_Controller {
 			//$this->db->insert('list_withdraw',$withdraw_insert);
 		}
 	}
+
 }
 ?>
