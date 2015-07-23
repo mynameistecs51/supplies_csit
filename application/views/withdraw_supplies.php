@@ -49,7 +49,7 @@
 				<label class="control-label col-sm-1" for="supplies_withdraw_name">ชื่อผู้เบิก:</label>
 				<div class="col-sm-3">
 					<!-- <input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" /> -->
-					<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true" title="----เลือก----">
+					<select id="first-disabled" name="user_withdraw" class="selectpicker" data-hide-disabled="true" data-live-search="true" title="----เลือก----">
 						<?php 
 						foreach ($show_user as $user_row) {
 							echo '<option value='.$user_row->user_id.'>อ'.$user_row->user_name.'</option>';

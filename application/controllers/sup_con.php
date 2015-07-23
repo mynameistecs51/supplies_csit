@@ -47,7 +47,7 @@ class Sup_con extends CI_Controller {
 
 		$name = $this->input->post('namelist[]');	//รายการที่เบิก
 		$number = $this->input->post('number[]');	//จำนวน
-		$swd_name = $this->input->post('supplies_withdraw_name');	//ผู้เบิก
+		$swd_name = $this->input->post('user_withdraw');	//ผู้เบิก
 		$swd_date = $this->input->post('supplies_date'); //วันที่เบิก
 		$swd_detail = $this->input->post('supplies_detail'); //หมายเหตุที่เบิก
 		 //echo count($name);
