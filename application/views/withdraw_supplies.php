@@ -11,11 +11,17 @@
 		<div class="panel-body">
 			<?php //echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form"'); ?>
 			<?php echo form_open('sup_con/add_withdraw','class="form-horizontal" role="form" id="add_withdraw" method="post" '); ?>
-
+			<?php
+			$amount = array();
+			foreach ($show_store as $store_row) {
+				//print_r($store_row);
+			}
+			?>
 			<div id="wd-0" class="form-group row well col-md-12 " >
 				<label class="control-label col-sm-2" for="supplies_name">ชื่อ/รายการ:</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="supplies_name-0" name="namelist[0]"  />
+					<!-- <input type="text" class="form-control" id="supplies_name-0" name="namelist[0]"  /> -->
+					<input type="text" class="form-control" id="supplies_name-0" name="namelist[0]" data-provide="typeahead"/>
 				</div>
 
 				<label class="control-label col-sm-1" for="supplies_amount">จำนวน:</label>
@@ -50,7 +56,7 @@
 				<div class="col-sm-3">
 					<!-- <input type="text" class="form-control" id="supplies_withdraw_name" name="supplies_withdraw_name" /> -->
 					<select id="first-disabled" name="user_withdraw" class="selectpicker" data-hide-disabled="true" data-live-search="true" title="----เลือก----">
-						<?php 
+						<?php
 						foreach ($show_user as $user_row) {
 							echo '<option value='.$user_row->user_id.'>อ'.$user_row->user_name.'</option>';
 							print_r($user_row);

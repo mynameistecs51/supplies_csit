@@ -23,5 +23,10 @@
 			$show_user = $this->db->get('user_supplies');
 			return $show_user->result();
 		}
+
+		public function get_store(){
+			$show_store = $this->db->get('supplies_store');
+			return $show_store->result();
+		}
 	}
 ?>

@@ -12,6 +12,7 @@ class Sup_con extends CI_Controller {
 
 		$data = array(
 			'show_user' => $this->sup_mod->get_user(),
+			'show_store' => $this->sup_mod->get_store(),
 			);
 
 		$this->load->view('withdraw_supplies', $data);
