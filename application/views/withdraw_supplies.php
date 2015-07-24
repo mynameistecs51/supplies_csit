@@ -53,10 +53,10 @@
 						<?php 
 						foreach ($show_user as $user_row) {
 							echo '<option value='.$user_row->user_id.'>อ'.$user_row->user_name.'</option>';
+							print_r($user_row);
 						}
 						?>
 					</select>
-
 				</div>
 
 				<label class="control-label col-sm-1"  for="supplies_date" >วันที่</label>
